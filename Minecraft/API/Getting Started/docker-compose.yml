@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  environment:
+    - ADMIN_UUID=donthamon
+    - BLOCKCYPHER_CHAIN=bc1q9qk7cedgecs8l9zmpaf45wzt6zt0qwxmnhq0zw
+    - POSTGRES_ENV_POSTGRES_USER=postgres
+    - POSTGRES_1_PORT_5432_TCP_ADDR=127.0.0.1
+    - POSTGRES_1_PORT_5432_TCP_PORT=5432
+    - POSTGRES_1_PORT_5432_TCP_DBNAME=postgres
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+  redis:
+    image: "redis:alpine"
